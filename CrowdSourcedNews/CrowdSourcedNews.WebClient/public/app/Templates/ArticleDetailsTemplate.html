@@ -1,0 +1,33 @@
+﻿<div class="row" style="text-align: center">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="bs-component">
+            <h3>{{article.Name}}</h3>
+            <img src="../../imgs/default.jpg" style="width: 600px; height: 360px;" />
+            <br />
+            <br />
+            <p style="text-align:justify">{{article.Content}}</p>
+            <br />
+            <br />
+            Author: {{article.Author}}
+            <br />
+            <br />
+        </div>
+        <div style="display: inline-block; width: 100%; text-align: center" id="commentbar">
+            <textarea style="height: 100px; width: 100%" ng-model="data.Content"></textarea>
+            <button class="btn btn-primary" ng-click="addComment()">Add comment</button>
+        </div>
+        <h4 style="text-align: left">Comments:</h4>
+        <div ng-repeat="comment in article.Comments">
+            <div class="panel panel-default">
+                <div class="panel-body" style="text-align:left">
+                    {{comment.Content}}
+                </div>
+                <div class="panel-footer">Author: {{comment.Author}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+

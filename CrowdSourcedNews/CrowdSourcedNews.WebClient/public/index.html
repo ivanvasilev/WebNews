@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Crowd Sourced News</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <!--<link href="libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet">-->
+    <link href="app/styles/sandstone.css" rel="stylesheet" />
+    <link rel="stylesheet" href="libs/toastr/toastr.css">
+    <link href="app/chat/chat.css" rel="stylesheet" />
+</head>
+<body ng-app="CrowdSourcedNews" ng-controller="MainController">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/Home">Crowd Sourced News</a>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active">
+                        <a href="#/Home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#/NewsArticles">News Articles</a>
+                    </li>
+                    <li>
+                        <a href="#/AddNewsArticles" id="addnewsarticlesbar">Add News Article</a>
+                    </li>
+                    <li>
+                        <a id="chat" href="#/LiveChat">Live Chat</a>
+                    </li>
+                    <li>
+                        <a href="#/Contacts">Contacts</a>
+                    </li>
+                </ul>
+                <!--<h1>Crowd Sourced News</h1>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#/Login" id="loginbar" class="col-sm-6">Login</a>
+                    </li>
+                    <li>
+                        <a href="#/Register" id="registerbar" class="col-sm-5">Register</a>
+                    </li>
+                    <li>
+                        <a href="#/Logged" id="loggedbar" class="col-sm-6">{{loggedUser}}</a>
+                    </li>
+                    <li>
+                        <a href="#/Home" id="logoutbar" class="col-sm-5" ng-click="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div ng-view>
+
+
+    </div>
+
+    <!--Enter Chat and press enter
+        <div><input id=input placeholder=you-chat-here /></div>
+        Chat Output
+        <div id=box></div>
+        <script src=http://cdn.pubnub.com/pubnub.min.js></script>
+        <script>(function(){
+    var box = PUBNUB.$('box'), input = PUBNUB.$('input'), channel = 'chat';
+    PUBNUB.subscribe({
+        channel  : channel,
+        callback : function(text) { box.innerHTML = (''+text).replace( /[<>]/g, '' ) + '<br>' + box.innerHTML }
+    });
+    PUBNUB.bind( 'keyup', input, function(e) {
+        (e.keyCode || e.charCode) === 13 && PUBNUB.publish({
+            channel : channel, message : input.value, x : (input.value='')
+        })
+    } )
+    })()</script>
+        <script src="app/2.js"></script>
+        <script src="app/3.js"></script>-->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/toastr/toastr.js"></script>
+    <script src="http://cdn.pubnub.com/pubnub-3.7.15.min.js"></script>
+    <script src="libs/underscore/underscore-min.js"></script>
+    <script src="app/main.js"></script>
+    <script src="app/chat/publisher.js"></script>
+    <script src="app/Providers/RegisterProvider.js"></script>
+    <script src="app/Controllers/RegisterController.js"></script>
+    <script src="app/Providers/LoginProvider.js"></script>
+    <script src="app/Controllers/LoginController.js"></script>
+    <script src="app/Providers/AddNewsArticleProvider.js"></script>
+    <script src="app/Controllers/AddNewsArticleController.js"></script>
+    <script src="app/Controllers/LoggedController.js"></script>
+    <script src="app/Controllers/MainController.js"></script>
+    <script src="app/Providers/NewsArticlesProvider.js"></script>
+    <script src="app/Controllers/NewsArticlesController.js"></script>
+    <script src="app/Controllers/AddNewsArticleController.js"></script>
+    <script src="app/Controllers/ArticleDetailsController.js"></script>
+    <script src="app/directives/FileUploadDirective.js"></script>
+    <script src="app/Providers/ChatProvider.js"></script>
+    <script src="app/Controllers/ChatController.js"></script>
+</body>
+</html>

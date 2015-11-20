@@ -1,0 +1,23 @@
+{
+  "name": "PetStore.WebClient",
+  "version": "0.0.0",
+  "authors": [
+    "ivanvasilev <ivanvasilev_90@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "bootstrap": "~3.3.5",
+    "jquery-ui": "~1.11.4",
+    "toastr": "~2.1.2",
+    "underscore": "~1.8.3"
+  }
+}

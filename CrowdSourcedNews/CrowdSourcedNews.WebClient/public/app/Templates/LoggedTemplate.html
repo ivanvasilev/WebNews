@@ -1,0 +1,51 @@
+﻿<div class="row logged-user" style="text-align: center">
+    <div class="row empty"></div>
+    <div class="row">
+        <div class="col-md-0"></div>
+        <div id="greeting" class="col-md-3">
+            <h2 class="h2" style="color: #00b3ee">
+                Hello, <span id="greeting-span">{{loggedUser}}</span>
+            </h2>
+        </div>
+        <div class="col-md-9"></div>
+    </div>
+    <div class="row" style="height: 220px;">
+        <div class="col-md-4">
+            <div class="row"></div>
+        </div>
+        <div class="col-md-4">
+            <div class="container-fluid">
+                <label for="category-options">Choose category:</label>
+                <select class="form-control" id="category-options" ng-model="category">
+                    <option ng-repeat="category in categories" value='{{category.Name}}'>{{category.Name}}</option>
+                </select>
+                <a href="#" class="btn btn-success" id="show-form-btn" ng-click="getArticlesByCategory()">Show</a>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-0"></div>
+
+    </div>
+    <div class="row">
+        <h2 class="h2">My Articles:</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div ng-repeat="article in articles" style="display: inline-block; width: 100%; text-align: center">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3><a href="#/NewsArticles/details/{{article.Id}}">{{article.Name}}</a></h3>
+                    </div>
+                    <div class="panel-body" style=" text-align:center">
+                        <img src="../../imgs/default.jpg" style="width: 400px; height: 240px;" />
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<script src="controllers/loggedController.js"></script>
+<script src="scripts/showAddVideo.js"></script>
